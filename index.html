@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Guía Completa: Almacenamiento Informático</title>
+  <title>Mi Trabajo Escolar: Almacenamiento Digital</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,12 +37,26 @@
       scroll-behavior: smooth;
     }
 
-    /* Encabezado */
+    /* Encabezado estilo Trabajo de Estudiante */
     header {
       background: linear-gradient(135deg, var(--bg-dark), #1e293b);
       color: #ffffff;
       padding: 2.5rem 1.25rem;
       text-align: center;
+    }
+
+    header .student-tag {
+      display: inline-block;
+      background: rgba(37, 99, 235, 0.3);
+      border: 1px solid #3b82f6;
+      color: #93c5fd;
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
     }
 
     header h1 {
@@ -51,7 +65,7 @@
     }
 
     header p {
-      font-size: 1rem;
+      font-size: 0.95rem;
       color: #94a3b8;
       max-width: 600px;
       margin: 0 auto;
@@ -79,7 +93,7 @@
       text-decoration: none;
       color: var(--text-main);
       font-weight: 600;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
     }
 
     nav a:hover {
@@ -102,11 +116,31 @@
     }
 
     h2.section-title {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       margin-bottom: 1.25rem;
       color: #0f172a;
       border-bottom: 2px solid var(--border-color);
       padding-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* Ficha de datos de entrega */
+    .student-card {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0.75rem;
+      font-size: 0.9rem;
+    }
+
+    .student-card strong {
+      color: var(--primary-dark);
     }
 
     /* Línea de tiempo */
@@ -149,7 +183,7 @@
     }
 
     .timeline-item h3 {
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       color: #0f172a;
     }
 
@@ -165,7 +199,7 @@
       width: 100%;
       border-collapse: collapse;
       text-align: left;
-      font-size: 0.95rem;
+      font-size: 0.92rem;
     }
 
     th, td {
@@ -189,7 +223,7 @@
     }
 
     .calc-title {
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       font-weight: 700;
       color: #0f172a;
       margin-bottom: 0.25rem;
@@ -241,7 +275,7 @@
 
     .calc-result {
       margin-top: 1.25rem;
-      padding: 1.1rem;
+      padding: 1rem;
       background: #eff6ff;
       border-left: 4px solid var(--primary);
       border-radius: 6px;
@@ -267,14 +301,14 @@
     }
 
     .card h3 {
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       margin-bottom: 0.5rem;
       color: #0f172a;
     }
 
     .card ul {
       padding-left: 1.2rem;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
     }
 
     .card li {
@@ -291,58 +325,72 @@
 </head>
 <body>
 
+  <!-- Encabezado con perfil de estudiante -->
   <header>
-    <h1>Almacenamiento Digital</h1>
-    <p>Evolución técnica, escala binaria y servicios en la nube.</p>
+    <div class="student-tag">Cuaderno de Tareas / Proyecto de Informática</div>
+    <h1>Investigación de Almacenamiento Digital</h1>
+    <p>Apuntes y resumen de clase sobre medios físicos, conversión binaria y almacenamiento en la nube.</p>
   </header>
 
-  <nav aria-label="Menú rápido">
+  <!-- Navegación -->
+  <nav aria-label="Navegación de temas">
     <ul>
-      <li><a href="#historia">Evolución</a></li>
-      <li><a href="#unidades">Unidades</a></li>
-      <li><a href="#conversor">Calculadora</a></li>
-      <li><a href="#nube">La Nube</a></li>
+      <li><a href="#datos">Datos de Entrega</a></li>
+      <li><a href="#historia">1. Evolución</a></li>
+      <li><a href="#unidades">2. Unidades de Medida</a></li>
+      <li><a href="#conversor">3. Herramienta de Conversión</a></li>
+      <li><a href="#nube">4. La Nube</a></li>
     </ul>
   </nav>
 
   <main class="container">
 
+    <!-- Ficha de Datos del Alumno -->
+    <div class="student-card" id="datos">
+      <div><strong>Estudiante:</strong> Michael Antonio Rodriguez Condega</div>
+      <div><strong>Materia:</strong> Informática / Tecnología</div>
+      <div><strong>Grado :</strong> Primer Año </div>
+      <div><strong>Fecha:</strong> Octubre 2026</div>
+    </div>
+
     <!-- Sección 1 -->
     <section id="historia">
-      <h2 class="section-title">🕒 Evolución de los Medios</h2>
+      <h2 class="section-title">🕒 1. Evolución de los Medios de Almacenamiento</h2>
+      <p>Resumen cronológico de los dispositivos según lo investigado en clase:</p>
+      
       <div class="timeline">
         <div class="timeline-item">
           <span class="badge">Años 50</span>
           <h3>Tarjetas Perforadas</h3>
-          <p>Almacenaban hasta <strong>960 bytes</strong>; las perforaciones codificaban ceros y unos físicamente.</p>
+          <p>Podían almacenar hasta <strong>960 bytes</strong>. Los agujeros representaban ceros (0) y las partes no perforadas unos (1). Una sola canción MP3 habría requerido miles de tarjetas de cartón.</p>
         </div>
         <div class="timeline-item">
           <span class="badge">Años 60</span>
           <h3>Cintas Magnéticas</h3>
-          <p>Una sola bobina permitía guardar de <strong>5 a 10 MB</strong>, superando a más de 10.000 tarjetas.</p>
+          <p>Una sola bobina de cinta podía sustituir a 10.000 tarjetas perforadas y guardaba entre <strong>5 y 10 MB</strong>.</p>
         </div>
         <div class="timeline-item">
           <span class="badge">Años 70 y 80</span>
           <h3>Disquetes (5¼" y 3½")</h3>
-          <p>Llevaron la portabilidad a las PC, estandarizándose en <strong>1,44 MB</strong> de capacidad.</p>
+          <p>Permitieron llevar archivos de forma portátil a las primeras computadoras. El disquete de 3½" ofrecía <strong>1,44 MB</strong> (alrededor de 375 páginas de texto).</p>
         </div>
         <div class="timeline-item">
           <span class="badge">Años 90</span>
           <h3>CD-ROM y Discos ZIP</h3>
-          <p>El CD ofreció <strong>700 MB</strong>; los discos ZIP alcanzaron hasta <strong>750 MB</strong> para respaldos.</p>
+          <p>El disco compacto (CD) alcanzó <strong>700 MB</strong> (450 veces más que un disquete), mientras que el disco ZIP permitía copias de seguridad de hasta 750 MB.</p>
         </div>
         <div class="timeline-item">
           <span class="badge">Actualidad</span>
-          <h3>Flash (USB), SSD y la Nube</h3>
-          <p>Almacenamiento veloz de estado sólido en chips y servidores accesibles en red en todo el mundo.</p>
+          <h3>Memorias USB, Discos SSD y Servidores</h3>
+          <p>Uso de memorias Flash compactas, discos de estado sólido NVMe ultrarrápidos y servicios centralizados en internet.</p>
         </div>
       </div>
     </section>
 
     <!-- Sección 2 -->
     <section id="unidades">
-      <h2 class="section-title">📊 Unidades de Medida</h2>
-      <p>Escala en base binaria ($2^{10} = 1024$):</p>
+      <h2 class="section-title">📊 2. Tabla de Unidades de Medida</h2>
+      <p>Equivalencias en base binaria ($2^{10} = 1024$) utilizadas por el ordenador:</p>
       
       <div class="table-container">
         <table>
@@ -350,8 +398,9 @@
             <tr>
               <th>Unidad</th>
               <th>Símbolo</th>
-              <th>Equivalencia binaria</th>
+              <th>Equivalencia Binaria</th>
               <th>Equivalencia en Bytes</th>
+              <th>Ejemplo Cotidiano</th>
             </tr>
           </thead>
           <tbody>
@@ -360,51 +409,56 @@
               <td>B</td>
               <td>8 bits</td>
               <td>1 B</td>
+              <td>Una letra o número</td>
             </tr>
             <tr>
               <td>Kilobyte</td>
               <td>KB</td>
               <td>1.024 Bytes</td>
               <td>1.024 B</td>
+              <td>Un documento de texto corto</td>
             </tr>
             <tr>
               <td>Megabyte</td>
               <td>MB</td>
               <td>1.024 KB</td>
               <td>1.048.576 B</td>
+              <td>Una foto o canción MP3</td>
             </tr>
             <tr>
               <td>Gigabyte</td>
               <td>GB</td>
               <td>1.024 MB</td>
               <td>1.073.741.824 B</td>
+              <td>Película en video, memoria RAM</td>
             </tr>
             <tr>
               <td>Terabyte</td>
               <td>TB</td>
               <td>1.024 GB</td>
               <td>1.099.511.627.776 B</td>
+              <td>Disco duro de una computadora</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <!-- CALCULADORA ÚNICA Y CORREGIDA -->
+      <!-- CALCULADORA DE CLASE -->
       <div class="calc-box" id="conversor">
-        <div class="calc-title">⚡ Calculadora de Conversión</div>
-        <p style="font-size: 0.9rem; color: var(--text-muted);">
-          Indica el número y selecciona la unidad de origen y destino:
+        <div class="calc-title">⚡ 3. Práctica: Conversor de Unidades</div>
+        <p style="font-size: 0.88rem; color: var(--text-muted);">
+          Herramienta para comprobar ejercicios y conversiones usando la base 1024:
         </p>
 
         <div class="calc-grid">
           <div class="input-group">
             <label for="numInput">Cantidad a convertir:</label>
-            <input type="number" id="numInput" value="1" min="0" step="any">
+            <input type="number" id="numInput" value="1" min="0" step="any" placeholder="Ingresa un valor">
           </div>
 
           <div class="row-flex">
             <div class="input-group">
-              <label for="unitFrom">De (unidad origen):</label>
+              <label for="unitFrom">De (unidad inicial):</label>
               <select id="unitFrom">
                 <option value="0">Bytes (B)</option>
                 <option value="1">Kilobytes (KB)</option>
@@ -415,7 +469,7 @@
             </div>
 
             <div class="input-group">
-              <label for="unitTo">A (unidad destino):</label>
+              <label for="unitTo">A (unidad resultante):</label>
               <select id="unitTo">
                 <option value="0">Bytes (B)</option>
                 <option value="1">Kilobytes (KB)</option>
@@ -433,36 +487,36 @@
       </div>
     </section>
 
-    <!-- Sección 3 -->
+    <!-- Sección 4 -->
     <section id="nube">
-      <h2 class="section-title">☁️ Almacenamiento en la Nube</h2>
-      <p>Servicio para resguardar información en servidores remotos vía internet.</p>
+      <h2 class="section-title">☁️ 4. Almacenamiento en la Nube</h2>
+      <p>Consiste en guardar archivos en servidores remotos accesibles vía internet en lugar de guardarlos exclusivamente en el disco local.</p>
       
       <div class="grid-cards">
         <div class="card">
-          <h3>Ventajas</h3>
+          <h3>Puntos a Favor</h3>
           <ul>
-            <li><strong>Ubicuidad:</strong> Acceso en todo lugar y equipo.</li>
-            <li><strong>Seguridad:</strong> Respaldo seguro ante daños físicos.</li>
-            <li><strong>Espacio:</strong> Menor carga en el almacenamiento local.</li>
+            <li><strong>Ubicuidad:</strong> Abrir mis tareas desde cualquier teléfono o PC.</li>
+            <li><strong>Seguridad:</strong> Si mi equipo se daña, los archivos no se pierden.</li>
+            <li><strong>Espacio:</strong> Menor uso de memoria interna en mi dispositivo.</li>
           </ul>
         </div>
         <div class="card">
-          <h3>Consideraciones</h3>
+          <h3>Puntos a Tomar en Cuenta</h3>
           <ul>
-            <li>Requiere conexión a la red.</li>
-            <li>Privacidad regulada por políticas del proveedor.</li>
-            <li>Cuotas de pago al superar planes gratuitos.</li>
+            <li>Se requiere internet para sincronizar archivos nuevos.</li>
+            <li>Privacidad regulada por las normas de cada empresa.</li>
+            <li>Espacio gratuito limitado (se paga suscripción para ampliar).</li>
           </ul>
         </div>
         <div class="card">
-          <h3>Plataformas</h3>
+          <h3>Servicios que uso / conozco</h3>
           <ul>
-            <li><strong>Google Drive:</strong> 15 GB gratuitos.</li>
-            <li><strong>OneDrive:</strong> 5 GB gratuitos.</li>
-            <li><strong>Dropbox:</strong> 2 GB gratuitos.</li>
-            <li><strong>iCloud:</strong> 5 GB gratuitos.</li>
-            <li><strong>MEGA:</strong> Gran espacio inicial con cifrado.</li>
+            <li><strong>Google Drive:</strong> 15 GB gratis (para tareas y Docs).</li>
+            <li><strong>Microsoft OneDrive:</strong> 5 GB gratis (integrado con Word y Excel).</li>
+            <li><strong>Dropbox:</strong> 2 GB gratis para archivos compartidos.</li>
+            <li><strong>iCloud:</strong> 5 GB gratis en dispositivos Apple.</li>
+            <li><strong>MEGA:</strong> Planes amplios de bienvenida con cifrado.</li>
           </ul>
         </div>
       </div>
@@ -471,7 +525,7 @@
   </main>
 
   <footer>
-    <p>&copy; Resumen Educativo de Informática</p>
+    <p>Proyecto escolar elaborado para la clase de Informática &bull; 2026</p>
   </footer>
 
   <script>
@@ -493,11 +547,10 @@
       const expFrom = parseInt(unitFrom.value);
       const expTo = parseInt(unitTo.value);
 
-      // Cálculo binario 1024
+      // Factor 1024
       const expDiff = expFrom - expTo;
       const result = val * Math.pow(1024, expDiff);
 
-      // Formato con separadores de miles para que sea legible
       let formattedResult;
       if (result >= 1) {
         formattedResult = Number.isInteger(result) 
@@ -514,7 +567,7 @@
     unitFrom.addEventListener('change', updateConversion);
     unitTo.addEventListener('change', updateConversion);
 
-    // Ejecución inicial
+    // Inicializar cálculo
     updateConversion();
   </script>
 
