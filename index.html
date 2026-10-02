@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guía Completa: Almacenamiento Informático</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --bg-dark: #0f172a;
+      --bg-light: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #334155;
+      --text-muted: #64748b;
+      --border-color: #e2e8f0;
+      --radius: 12px;
+      --shadow: 0 4px 6px -1px rgba(0,0,0,0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      background-color: var(--bg-light);
+      color: var(--text-main);
+      scroll-behavior: smooth;
+    }
+
+    /* Encabezado */
+    header {
+      background: linear-gradient(135deg, var(--bg-dark), #1e293b);
+      color: #ffffff;
+      padding: 2.5rem 1.25rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1rem;
+      color: #94a3b8;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Navegación */
+    nav {
+      background: #ffffff;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      list-style: none;
+      padding: 0.8rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text-main);
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 1.5rem auto;
+      padding: 0 1rem;
+    }
+
+    section {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    h2.section-title {
+      font-size: 1.5rem;
+      margin-bottom: 1.25rem;
+      color: #0f172a;
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 0.5rem;
+    }
+
+    /* Línea de tiempo */
+    .timeline {
+      border-left: 3px solid var(--primary);
+      padding-left: 1.25rem;
+      margin-top: 1rem;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 1.5rem;
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -1.7rem;
+      top: 0.35rem;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--primary);
+      border: 2px solid #ffffff;
+    }
+
+    .timeline-item .badge {
+      display: inline-block;
+      background: #eff6ff;
+      color: var(--primary);
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+
+    .timeline-item h3 {
+      font-size: 1.1rem;
+      color: #0f172a;
+    }
+
+    /* Tabla */
+    .table-container {
+      overflow-x: auto;
+      margin-top: 1rem;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.95rem;
+    }
+
+    th, td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    th {
+      background: #f8fafc;
+      color: #0f172a;
+      font-weight: 600;
+    }
+
+    /* CALCULADORA LIMPIA */
+    .calc-box {
+      background: #f8fafc;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .calc-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 0.25rem;
+    }
+
+    .calc-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .input-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 0.35rem;
+    }
+
+    .calc-grid input,
+    .calc-grid select {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      font-size: 1rem;
+      background: #ffffff;
+      outline: none;
+      font-family: inherit;
+    }
+
+    .calc-grid input:focus,
+    .calc-grid select:focus {
+      border-color: var(--primary);
+    }
+
+    .row-flex {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+
+    @media (max-width: 600px) {
+      .row-flex {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .calc-result {
+      margin-top: 1.25rem;
+      padding: 1.1rem;
+      background: #eff6ff;
+      border-left: 4px solid var(--primary);
+      border-radius: 6px;
+      color: #1e3a8a;
+      font-weight: 700;
+      font-size: 1.05rem;
+      word-break: break-all;
+    }
+
+    /* Tarjetas de Nube */
+    .grid-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .card {
+      background: #f8fafc;
+      border: 1px solid var(--border-color);
+      padding: 1.25rem;
+      border-radius: 8px;
+    }
+
+    .card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: #0f172a;
+    }
+
+    .card ul {
+      padding-left: 1.2rem;
+      font-size: 0.95rem;
+    }
+
+    .card li {
+      margin-bottom: 0.35rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Almacenamiento Digital</h1>
+    <p>Evolución técnica, escala binaria y servicios en la nube.</p>
+  </header>
+
+  <nav aria-label="Menú rápido">
+    <ul>
+      <li><a href="#historia">Evolución</a></li>
+      <li><a href="#unidades">Unidades</a></li>
+      <li><a href="#conversor">Calculadora</a></li>
+      <li><a href="#nube">La Nube</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+
+    <!-- Sección 1 -->
+    <section id="historia">
+      <h2 class="section-title">🕒 Evolución de los Medios</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <span class="badge">Años 50</span>
+          <h3>Tarjetas Perforadas</h3>
+          <p>Almacenaban hasta <strong>960 bytes</strong>; las perforaciones codificaban ceros y unos físicamente.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="badge">Años 60</span>
+          <h3>Cintas Magnéticas</h3>
+          <p>Una sola bobina permitía guardar de <strong>5 a 10 MB</strong>, superando a más de 10.000 tarjetas.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="badge">Años 70 y 80</span>
+          <h3>Disquetes (5¼" y 3½")</h3>
+          <p>Llevaron la portabilidad a las PC, estandarizándose en <strong>1,44 MB</strong> de capacidad.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="badge">Años 90</span>
+          <h3>CD-ROM y Discos ZIP</h3>
+          <p>El CD ofreció <strong>700 MB</strong>; los discos ZIP alcanzaron hasta <strong>750 MB</strong> para respaldos.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="badge">Actualidad</span>
+          <h3>Flash (USB), SSD y la Nube</h3>
+          <p>Almacenamiento veloz de estado sólido en chips y servidores accesibles en red en todo el mundo.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección 2 -->
+    <section id="unidades">
+      <h2 class="section-title">📊 Unidades de Medida</h2>
+      <p>Escala en base binaria ($2^{10} = 1024$):</p>
+      
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Unidad</th>
+              <th>Símbolo</th>
+              <th>Equivalencia binaria</th>
+              <th>Equivalencia en Bytes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Byte</td>
+              <td>B</td>
+              <td>8 bits</td>
+              <td>1 B</td>
+            </tr>
+            <tr>
+              <td>Kilobyte</td>
+              <td>KB</td>
+              <td>1.024 Bytes</td>
+              <td>1.024 B</td>
+            </tr>
+            <tr>
+              <td>Megabyte</td>
+              <td>MB</td>
+              <td>1.024 KB</td>
+              <td>1.048.576 B</td>
+            </tr>
+            <tr>
+              <td>Gigabyte</td>
+              <td>GB</td>
+              <td>1.024 MB</td>
+              <td>1.073.741.824 B</td>
+            </tr>
+            <tr>
+              <td>Terabyte</td>
+              <td>TB</td>
+              <td>1.024 GB</td>
+              <td>1.099.511.627.776 B</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- CALCULADORA ÚNICA Y CORREGIDA -->
+      <div class="calc-box" id="conversor">
+        <div class="calc-title">⚡ Calculadora de Conversión</div>
+        <p style="font-size: 0.9rem; color: var(--text-muted);">
+          Indica el número y selecciona la unidad de origen y destino:
+        </p>
+
+        <div class="calc-grid">
+          <div class="input-group">
+            <label for="numInput">Cantidad a convertir:</label>
+            <input type="number" id="numInput" value="1" min="0" step="any">
+          </div>
+
+          <div class="row-flex">
+            <div class="input-group">
+              <label for="unitFrom">De (unidad origen):</label>
+              <select id="unitFrom">
+                <option value="0">Bytes (B)</option>
+                <option value="1">Kilobytes (KB)</option>
+                <option value="2">Megabytes (MB)</option>
+                <option value="3" selected>Gigabytes (GB)</option>
+                <option value="4">Terabytes (TB)</option>
+              </select>
+            </div>
+
+            <div class="input-group">
+              <label for="unitTo">A (unidad destino):</label>
+              <select id="unitTo">
+                <option value="0">Bytes (B)</option>
+                <option value="1">Kilobytes (KB)</option>
+                <option value="2" selected>Megabytes (MB)</option>
+                <option value="3">Gigabytes (GB)</option>
+                <option value="4">Terabytes (TB)</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="calc-result" id="outputResult">
+          1 GB = 1.024 MB
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección 3 -->
+    <section id="nube">
+      <h2 class="section-title">☁️ Almacenamiento en la Nube</h2>
+      <p>Servicio para resguardar información en servidores remotos vía internet.</p>
+      
+      <div class="grid-cards">
+        <div class="card">
+          <h3>Ventajas</h3>
+          <ul>
+            <li><strong>Ubicuidad:</strong> Acceso en todo lugar y equipo.</li>
+            <li><strong>Seguridad:</strong> Respaldo seguro ante daños físicos.</li>
+            <li><strong>Espacio:</strong> Menor carga en el almacenamiento local.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Consideraciones</h3>
+          <ul>
+            <li>Requiere conexión a la red.</li>
+            <li>Privacidad regulada por políticas del proveedor.</li>
+            <li>Cuotas de pago al superar planes gratuitos.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Plataformas</h3>
+          <ul>
+            <li><strong>Google Drive:</strong> 15 GB gratuitos.</li>
+            <li><strong>OneDrive:</strong> 5 GB gratuitos.</li>
+            <li><strong>Dropbox:</strong> 2 GB gratuitos.</li>
+            <li><strong>iCloud:</strong> 5 GB gratuitos.</li>
+            <li><strong>MEGA:</strong> Gran espacio inicial con cifrado.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; Resumen Educativo de Informática</p>
+  </footer>
+
+  <script>
+    const numInput = document.getElementById('numInput');
+    const unitFrom = document.getElementById('unitFrom');
+    const unitTo = document.getElementById('unitTo');
+    const outputResult = document.getElementById('outputResult');
+
+    const unitLabels = ["Bytes", "KB", "MB", "GB", "TB"];
+
+    function updateConversion() {
+      const val = parseFloat(numInput.value);
+
+      if (isNaN(val) || val < 0) {
+        outputResult.innerText = "Ingresa un número válido.";
+        return;
+      }
+
+      const expFrom = parseInt(unitFrom.value);
+      const expTo = parseInt(unitTo.value);
+
+      // Cálculo binario 1024
+      const expDiff = expFrom - expTo;
+      const result = val * Math.pow(1024, expDiff);
+
+      // Formato con separadores de miles para que sea legible
+      let formattedResult;
+      if (result >= 1) {
+        formattedResult = Number.isInteger(result) 
+          ? result.toLocaleString('es-ES') 
+          : result.toLocaleString('es-ES', { maximumFractionDigits: 4 });
+      } else {
+        formattedResult = result.toPrecision(4);
+      }
+
+      outputResult.innerText = `${val.toLocaleString('es-ES')} ${unitLabels[expFrom]} equivale a ${formattedResult} ${unitLabels[expTo]}`;
+    }
+
+    numInput.addEventListener('input', updateConversion);
+    unitFrom.addEventListener('change', updateConversion);
+    unitTo.addEventListener('change', updateConversion);
+
+    // Ejecución inicial
+    updateConversion();
+  </script>
+
+</body>
+</html>
